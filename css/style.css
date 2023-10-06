@@ -97,7 +97,7 @@ body {
 
 .btn-login{
     border: none;
-    background-color: #1ac2ff;
+    background-color: #c90a0a;
     color: white;
     padding: 14px 100px;
     text-align: center;
@@ -147,9 +147,8 @@ body {
     left: 0;
     right: 0;
     top: 100%;
-    background-color: #080842;
+    background-color: #9a1212;
     overflow: hidden;
-    color: #080842;
     text-align: center;
     text-decoration: none;
     width: 100%;
@@ -162,7 +161,7 @@ body {
     left: 0;
     right: 0;
     top: 100%;
-    background-color: #e7c800;
+    background-color: #bd2601;
     overflow: hidden;
     color: #020220;
     text-align: center;
@@ -202,23 +201,23 @@ body {
 }
 
 .btn-register{
-    border-radius: 30px;
     border: none;
-    background-color: #63d6ff;
-    color: rgb(40, 66, 75);
-    padding: 13px 20px;
+    background-color: #47cdfe;
+    color: black;
+    padding: 14px 100px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
-    font-size: 10px;
     margin: 20px 0 0 0;
-    transition: .1s;
+    transition: .2s;
+    border: none;
 }
 
 .btn-register:hover {
     text-decoration: none;
-    background-color: grey;
+    background-color: #080842;
+    color: white;
 }
 
 a:link {
@@ -248,7 +247,7 @@ hr {
 
 .car-model {
     height: 219px;
-    width: 522px;
+    width: auto;
 }
 
 .car-spec {
@@ -266,13 +265,17 @@ hr {
 }
 
 .main h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 27px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .main p {
-    color: #696969;
+    color: #292929;
+    letter-spacing: 0px;
 }
 
 .main b {
@@ -284,5 +287,26 @@ hr {
 .col {
     display: flex;
     justify-content: center;
+    text-align: center;
+    margin: 0 12px 0 12px;
+    padding: 1px;
+    font-weight: 600;
+}
+
+#grad {
+    background: linear-gradient(to right bottom, grey, white) no-repeat;
+}
+
+.btn-adm-selection {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    padding: auto;
+    background-color: rgb(45, 45, 45);
+    border-radius: 10px;
+}
+
+.btn-adm-selection:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 20px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
