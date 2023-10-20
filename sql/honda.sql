@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2023 at 07:06 AM
+-- Generation Time: Oct 20, 2023 at 05:45 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -117,42 +117,70 @@ CREATE TABLE `specifications` (
   `SpareTyreSize` varchar(255) NOT NULL,
   `ModelId` int(11) NOT NULL,
   `Price` double NOT NULL,
-  `ModelType` varchar(255) NOT NULL
+  `ModelType` varchar(255) NOT NULL,
+  `Model` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `specifications`
 --
 
-INSERT INTO `specifications` (`Id`, `EngineType`, `FuelSupplySystem`, `Displacement`, `MaxPower`, `MaxTorque`, `Speed`, `Acceleration`, `FuelConsumption`, `Front`, `Rear`, `ParkingBrake`, `Type`, `TurningRadius`, `Length`, `Width`, `Height`, `WheelType`, `WheelSize`, `TyreSize`, `SpareTyreSize`, `ModelId`, `Price`, `ModelType`) VALUES
-(1, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '201(148)@5,500', '260@1,600‑5,000', 190, 9, 6.3, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 6.1, 4901, 1862, 1450, 'Alloy', '17\"', '225/50R17', '16\"', 1, 187060, 'Accord 1.5 TC'),
-(2, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '201(148)@5,500', '260@1,600‑5,000', 190, 9.1, 6.3, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 6.1, 4901, 1862, 1450, 'Alloy', '18\"', '235/45R18', '16\"', 1, 197060, 'Accord 1.5 TC-P'),
-(3, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 196, 10.2, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4580, 1748, 1467, 'Alloy', '15\"', '185/60R15', '15\"', 2, 84560, 'City 1.5L S'),
-(4, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 196, 10.2, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4580, 1748, 1467, 'Alloy', '15\"', '185/60R15', '15\"', 2, 89560, 'City 1.5L E'),
-(5, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 195, 10.4, 5.6, 'Ventilated Disc', 'Solid Disc', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4580, 1748, 1467, 'Alloy', '16\"', '185/55R16', '15\"', 2, 94560, 'City 1.5L V'),
-(6, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 195, 10.4, 5.6, 'Ventilated Disc', 'Solid Disc', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4589, 1748, 1467, 'Alloy', '16\"', '185/55R16', '15\"', 2, 99560, 'City 1.5L RS'),
-(7, '4 Cylinder, 16 Valve, DOHC i‑VTEC (Atkinson Cycle)', 'Electronic Fuel Injection (PGM‑FI)', 1498, 'Engine: 98 (72) @ 5,600 – 6,400 Motor: 109 (80) @ 3,500 – 8,000', 'Engine: 127 (13.0) @ 4,500 – 5,000 Motor: 253 (25.8) @ 0 – 3,000', 177, 9.9, 3.6, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5, 4589, 1748, 1467, 'Alloy', '16\"', '185/55R16', 'Temporary Repair Kit', 2, 111560, 'City 1.5L e:HEV RS'),
-(8, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '182 (134) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.3, 6, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.8, 4678, 1802, 1415, 'Alloy', '16\"', '215/55R16', '16\"', 3, 131560, 'Civic 1.5L E'),
-(9, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '182 (134) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.4, 6, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.8, 4678, 1802, 1415, 'Alloy', '17\"', '215/50R17', '16\"', 3, 144560, 'Civic 1.5L V'),
-(10, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '182 (134) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.5, 6.3, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 6.1, 4678, 1802, 1415, 'Alloy', '18\"', '235/40ZR18', '16\"', 3, 151560, 'Civic 1.5L RS'),
-(11, '4 Cylinder, 16 Valve, DOHC (Atkinson Cycle)', 'Direct Fuel Injection', 1993, 'Engine:143 (105) @ 6,000 Motor:184 (135) @ 5,000-6,000', 'Engine:189 (19.3) @ 4,500 Motor:315 (32.1) @ 0 - 2,000', 180, 7.9, 4, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 6.2, 4678, 1802, 1415, 'Alloy', '18\"', '235/40ZR18', '16\"', 3, 167123.5, 'Civic e:HEV 2.0L RS'),
-(12, '4 Cylinder, 16 Valve, SOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1997, '154 (113) @ 6,500', '189 (19.3) @ 4,300', 192, 11.5, 7.3, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.9, 4623, 1855, 1679, 'Alloy', '17\"', '235/65R17', '17\"', 4, 146061.2, 'CR-V 2.0 2WD'),
-(13, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '193 (142) @ 5,600', '243 (24.8) @ 2,000 ‑ 5,000', 200, 8.9, 6.8, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.9, 4623, 1855, 1679, 'Alloy', '18\"', '235/60R18', '18\"', 4, 165430, 'CR-V 1.5 TC-P 2WD'),
-(14, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '193 (142) @ 5,600', '243 (24.8) @ 2,000 ‑ 5,000', 200, 8.9, 6.8, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.9, 4623, 1855, 1679, 'Alloy', '18\"', '235/60R18', '18\"', 4, 170030, 'CR-V BLACK EDITION'),
-(15, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '193 (142) @ 5,600', '243 (24.8) @ 2,000 ‑ 5,000', 200, 9.3, 7, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.9, 4623, 1855, 1689, 'Alloy', '18\"', '235/60R18', '18\"', 4, 171030, 'CR-V 1.5 TC-P 4WD'),
-(16, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 187, 12.1, 5.9, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.5, 4330, 1790, 1590, '-', '17\"', '215/60R17', '17\"', 5, 115560, 'HR-V 1.5L S'),
-(17, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '181 (133) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.7, 6.5, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.5, 4385, 1790, 1590, '-', '17\"', '215/60R17', '17\"', 5, 130560, 'HR-V 1.5L T E'),
-(18, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '181 (133) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.8, 6.5, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.5, 4385, 1790, 1590, '-', '18\"', '225/50R18', '18\"', 5, 135560, 'HR-V 1.5L T V'),
-(19, '4 Cylinder, 16 Valve, DOHC i‑VTEC (Atkinson Cycle)', 'Electronic Fuel Injection (PGM‑FI)', 1498, 'Engine: 107 (79) @ 6,000-6,400 Motor: 131 (96) @ 4,000-8,000', 'Engine: 131 (13.4) @ 4,500-5,000 Motor: 253 (25.8) @ 0-3,500', 170, 10.7, 4.1, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.5, 4385, 1790, 1590, '-', '18\"', '225/50R18', 'Temporary Repair Kit', 5, 141560, 'HR-V 1.5L e:HEV RS'),
-(20, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 160, 11, 6, 'Ventilated Disc', 'Drum', 'Hand Brake', 'Electric Power Steering (EPS)', 5.2, 4060, 1780, 1576, 'Alloy', '16\"', '215/60/R16', '16” Steel Wheel', 6, 89560, 'WR-V 1.5L S'),
-(21, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 160, 11, 6, 'Ventilated Disc', 'Drum', 'Hand Brake', 'Electric Power Steering (EPS)', 5.2, 4060, 1780, 1608, 'Alloy', '16\"', '215/60/R16', '16” Steel Wheel', 6, 95560, 'WR-V 1.5L E'),
-(22, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 160, 11.1, 6, 'Ventilated Disc', 'Drum', 'Hand Brake', 'Electric Power Steering (EPS)', 5.2, 4060, 1780, 1608, 'Alloy', '16\"', '215/60/R16', '16” Steel Wheel', 6, 99560, 'WR-V 1.5L V'),
-(23, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 160, 11.3, 6, 'Ventilated Disc', 'Drum', 'Hand Brake', 'Electric Power Steering (EPS)', 5.2, 4060, 1780, 1608, 'Alloy', '17\"', '215/55/R17', '16” Steel Wheel', 6, 107560, 'WR-V 1.5L RS'),
-(24, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 195, 10.7, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4345, 1748, 1488, 'Alloy', '15\"', '185/60R15', '15\"', 7, 78560, 'City Hatchback 1.5L S'),
-(25, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 195, 10.7, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4345, 1748, 1488, 'Alloy', '15\"', '185/60R15', '15\"', 7, 86560, 'City Hatchback 1.5L E'),
-(26, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 194, 10.7, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4345, 1748, 1488, 'Alloy', '16\"', '185/55R16', '15\"', 7, 91560, 'City Hatchback 1.5L V'),
-(27, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 194, 10.7, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4345, 1748, 1488, 'Alloy', '16\"', '185/55R16', '15\"', 7, 95560, 'City Hatchback 1.5L V-SENSING'),
-(28, '4 Cylinder, 16 Valve, DOHC i‑VTEC (Atkinson Cycle)', 'Electronic Fuel Injection (PGM‑FI)', 1498, '98 (72) @ 5,600 ‑ 6,400', '127 (13.0) @ 4,500 ‑ 5,000', 175, 9.7, 3.6, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5, 4349, 1748, 1488, 'Alloy', '16\"', '185/55R16', 'Temporary Repair Kit', 7, 109560, 'City Hatchback 1.5L RS');
+INSERT INTO `specifications` (`Id`, `EngineType`, `FuelSupplySystem`, `Displacement`, `MaxPower`, `MaxTorque`, `Speed`, `Acceleration`, `FuelConsumption`, `Front`, `Rear`, `ParkingBrake`, `Type`, `TurningRadius`, `Length`, `Width`, `Height`, `WheelType`, `WheelSize`, `TyreSize`, `SpareTyreSize`, `ModelId`, `Price`, `ModelType`, `Model`) VALUES
+(1, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '201(148)@5,500', '260@1,600‑5,000', 190, 9, 6.3, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 6.1, 4901, 1862, 1450, 'Alloy', '17\"', '225/50R17', '16\"', 1, 187060, 'Accord 1.5 TC', 'Accord'),
+(2, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '201(148)@5,500', '260@1,600‑5,000', 190, 9.1, 6.3, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 6.1, 4901, 1862, 1450, 'Alloy', '18\"', '235/45R18', '16\"', 1, 197060, 'Accord 1.5 TC-P', 'Accord'),
+(3, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 196, 10.2, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4580, 1748, 1467, 'Alloy', '15\"', '185/60R15', '15\"', 2, 84560, 'City 1.5L S', 'City'),
+(4, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 196, 10.2, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4580, 1748, 1467, 'Alloy', '15\"', '185/60R15', '15\"', 2, 89560, 'City 1.5L E', 'City'),
+(5, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 195, 10.4, 5.6, 'Ventilated Disc', 'Solid Disc', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4580, 1748, 1467, 'Alloy', '16\"', '185/55R16', '15\"', 2, 94560, 'City 1.5L V', 'City'),
+(6, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 195, 10.4, 5.6, 'Ventilated Disc', 'Solid Disc', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4589, 1748, 1467, 'Alloy', '16\"', '185/55R16', '15\"', 2, 99560, 'City 1.5L RS', 'City'),
+(7, '4 Cylinder, 16 Valve, DOHC i‑VTEC (Atkinson Cycle)', 'Electronic Fuel Injection (PGM‑FI)', 1498, 'Engine: 98 (72) @ 5,600 – 6,400 Motor: 109 (80) @ 3,500 – 8,000', 'Engine: 127 (13.0) @ 4,500 – 5,000 Motor: 253 (25.8) @ 0 – 3,000', 177, 9.9, 3.6, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5, 4589, 1748, 1467, 'Alloy', '16\"', '185/55R16', 'Temporary Repair Kit', 2, 111560, 'City 1.5L e:HEV RS', 'City'),
+(8, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '182 (134) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.3, 6, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.8, 4678, 1802, 1415, 'Alloy', '16\"', '215/55R16', '16\"', 3, 131560, 'Civic 1.5L E', 'Civic'),
+(9, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '182 (134) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.4, 6, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.8, 4678, 1802, 1415, 'Alloy', '17\"', '215/50R17', '16\"', 3, 144560, 'Civic 1.5L V', 'Civic'),
+(10, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '182 (134) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.5, 6.3, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 6.1, 4678, 1802, 1415, 'Alloy', '18\"', '235/40ZR18', '16\"', 3, 151560, 'Civic 1.5L RS', 'Civic'),
+(11, '4 Cylinder, 16 Valve, DOHC (Atkinson Cycle)', 'Direct Fuel Injection', 1993, 'Engine:143 (105) @ 6,000 Motor:184 (135) @ 5,000-6,000', 'Engine:189 (19.3) @ 4,500 Motor:315 (32.1) @ 0 - 2,000', 180, 7.9, 4, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 6.2, 4678, 1802, 1415, 'Alloy', '18\"', '235/40ZR18', '16\"', 3, 167123.5, 'Civic e:HEV 2.0L RS', 'Civic'),
+(12, '4 Cylinder, 16 Valve, SOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1997, '154 (113) @ 6,500', '189 (19.3) @ 4,300', 192, 11.5, 7.3, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.9, 4623, 1855, 1679, 'Alloy', '17\"', '235/65R17', '17\"', 4, 146061.2, 'CR-V 2.0 2WD', 'CR-V'),
+(13, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '193 (142) @ 5,600', '243 (24.8) @ 2,000 ‑ 5,000', 200, 8.9, 6.8, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.9, 4623, 1855, 1679, 'Alloy', '18\"', '235/60R18', '18\"', 4, 165430, 'CR-V 1.5 TC-P 2WD', 'CR-V'),
+(14, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '193 (142) @ 5,600', '243 (24.8) @ 2,000 ‑ 5,000', 200, 8.9, 6.8, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.9, 4623, 1855, 1679, 'Alloy', '18\"', '235/60R18', '18\"', 4, 170030, 'CR-V BLACK EDITION', 'CR-V'),
+(15, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '193 (142) @ 5,600', '243 (24.8) @ 2,000 ‑ 5,000', 200, 9.3, 7, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.9, 4623, 1855, 1689, 'Alloy', '18\"', '235/60R18', '18\"', 4, 171030, 'CR-V 1.5 TC-P 4WD', 'CR-V'),
+(16, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 187, 12.1, 5.9, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.5, 4330, 1790, 1590, '-', '17\"', '215/60R17', '17\"', 5, 115560, 'HR-V 1.5L S', 'HR-V'),
+(17, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '181 (133) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.7, 6.5, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.5, 4385, 1790, 1590, '-', '17\"', '215/60R17', '17\"', 5, 130560, 'HR-V 1.5L T E', 'HR-V'),
+(18, '4 Cylinder, 16 Valve, DOHC VTEC TURBO', 'Electronic Fuel Injection (PGM‑FI)', 1498, '181 (133) @ 6,000', '240 (24.5) @ 1,700‑4,500', 200, 8.8, 6.5, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.5, 4385, 1790, 1590, '-', '18\"', '225/50R18', '18\"', 5, 135560, 'HR-V 1.5L T V', 'HR-V'),
+(19, '4 Cylinder, 16 Valve, DOHC i‑VTEC (Atkinson Cycle)', 'Electronic Fuel Injection (PGM‑FI)', 1498, 'Engine: 107 (79) @ 6,000-6,400 Motor: 131 (96) @ 4,000-8,000', 'Engine: 131 (13.4) @ 4,500-5,000 Motor: 253 (25.8) @ 0-3,500', 170, 10.7, 4.1, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5.5, 4385, 1790, 1590, '-', '18\"', '225/50R18', 'Temporary Repair Kit', 5, 141560, 'HR-V 1.5L e:HEV RS', 'HR-V'),
+(20, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 160, 11, 6, 'Ventilated Disc', 'Drum', 'Hand Brake', 'Electric Power Steering (EPS)', 5.2, 4060, 1780, 1576, 'Alloy', '16\"', '215/60/R16', '16” Steel Wheel', 6, 89560, 'WR-V 1.5L S', 'WR-V'),
+(21, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 160, 11, 6, 'Ventilated Disc', 'Drum', 'Hand Brake', 'Electric Power Steering (EPS)', 5.2, 4060, 1780, 1608, 'Alloy', '16\"', '215/60/R16', '16” Steel Wheel', 6, 95560, 'WR-V 1.5L E', 'WR-V'),
+(22, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 160, 11.1, 6, 'Ventilated Disc', 'Drum', 'Hand Brake', 'Electric Power Steering (EPS)', 5.2, 4060, 1780, 1608, 'Alloy', '16\"', '215/60/R16', '16” Steel Wheel', 6, 99560, 'WR-V 1.5L V', 'WR-V'),
+(23, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 160, 11.3, 6, 'Ventilated Disc', 'Drum', 'Hand Brake', 'Electric Power Steering (EPS)', 5.2, 4060, 1780, 1608, 'Alloy', '17\"', '215/55/R17', '16” Steel Wheel', 6, 107560, 'WR-V 1.5L RS', 'WR-V'),
+(24, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 195, 10.7, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4345, 1748, 1488, 'Alloy', '15\"', '185/60R15', '15\"', 7, 1234, 'City Hatchback 1.5L S', 'City-Hatchback'),
+(25, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 195, 10.7, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4345, 1748, 1488, 'Alloy', '15\"', '185/60R15', '15\"', 7, 86560, 'City Hatchback 1.5L E', 'City-Hatchback'),
+(26, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 194, 10.7, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4345, 1748, 1488, 'Alloy', '16\"', '185/55R16', '15\"', 7, 1234, 'City Hatchback 1.5L V', 'City-Hatchback'),
+(27, '4 Cylinder, 16 Valve, DOHC i‑VTEC', 'Electronic Fuel Injection (PGM‑FI)', 1498, '121 (89) @ 6,600', '145 (14.8) @ 4,300', 194, 10.7, 5.6, 'Ventilated Disc', 'Drum', 'Hand Brake Lever', 'Electric Power Steering (EPS)', 5, 4345, 1748, 1488, 'Alloy', '16\"', '185/55R16', '15\"', 7, 95560, 'City Hatchback 1.5L V-SENSING', 'City-Hatchback'),
+(28, '4 Cylinder, 16 Valve, DOHC i‑VTEC (Atkinson Cycle)', 'Electronic Fuel Injection (PGM‑FI)', 1498, '98 (72) @ 5,600 ‑ 6,400', '127 (13.0) @ 4,500 ‑ 5,000', 175, 9.7, 3.6, 'Ventilated Disc', 'Solid Disc', 'Electric Parking Brake', 'Electric Power Steering (EPS)', 5, 4349, 1748, 1488, 'Alloy', '16\"', '185/55R16', 'Temporary Repair Kit', 7, 109560, 'City Hatchback 1.5L RS', 'City-Hatchback');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stock`
+--
+
+CREATE TABLE `stock` (
+  `id` int(11) NOT NULL,
+  `modelId` int(11) NOT NULL,
+  `specId` int(11) NOT NULL,
+  `specModel` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `stock` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `stock`
+--
+
+INSERT INTO `stock` (`id`, `modelId`, `specId`, `specModel`, `color`, `stock`) VALUES
+(16, 1, 1, 'Accord 1.5 TC', 'Black', 40),
+(17, 1, 2, 'Accord 1.5 TC-P', 'White', 6),
+(19, 1, 1, 'Accord 1.5 TC', 'Silver', 11),
+(20, 2, 3, 'City 1.5L S', 'White', 10),
+(21, 7, 24, 'City Hatchback 1.5L S', 'Black', 23),
+(22, 1, 1, 'Accord 1.5 TC', 'White', 50);
 
 -- --------------------------------------------------------
 
@@ -164,15 +192,17 @@ CREATE TABLE `user` (
   `user_id` int(5) NOT NULL,
   `user_name` varchar(55) NOT NULL,
   `email` varchar(55) NOT NULL,
-  `password` varchar(55) NOT NULL
+  `password` varchar(55) NOT NULL,
+  `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`) VALUES
-(1, 'Tan Zhi', 'volcanoyung.tzy@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055');
+INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`, `admin`) VALUES
+(1, 'admin', 'caradmin@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 1),
+(2, 'Tan Zhi', 'volcanoyung.tzy@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 0);
 
 --
 -- Indexes for dumped tables
@@ -197,6 +227,12 @@ ALTER TABLE `specifications`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `stock`
+--
+ALTER TABLE `stock`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -213,10 +249,22 @@ ALTER TABLE `carinformation`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `specifications`
+--
+ALTER TABLE `specifications`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `stock`
+--
+ALTER TABLE `stock`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

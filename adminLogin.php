@@ -1,4 +1,18 @@
+<?php include('config/constants.php'); ?>
+<?php
 
+include 'config/config.php';
+$_SESSION['rand'] = null;
+
+if(isset($_POST['submit'])){
+ 
+ $user = mysqli_real_escape_string($conn, $_POST['user']);
+ $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+
+ $select = mysqli_query($conn, "SELECT * FROM `user` WHERE user_name = '$user' AND password = '$pass' AND admin = '1'") or die('query failed');
+}
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,9 +34,9 @@
         <div class="adm-frame">
           <h3>Admin Login</h3>
           <br/>
-            <form action="adminIndex.php" method="POST" enctype="multipart/form-data">
+            <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="field">
-                    <input type="email" class="adm-textbox" name="email" placeholder="Email" required="required" autofocus>
+                    <input type="user" class="adm-textbox" name="user" placeholder="Admin" required="required" autofocus>
                 </div>
                 <div class="field">
                     <input type="password" class="adm-textbox" name="password" placeholder="Password" id="pass" required="required">

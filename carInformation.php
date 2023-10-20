@@ -1,11 +1,13 @@
 <?php
 include_once 'header2.php';
 ?>
+
 <?php
        $model = isset($_GET['model']) ? $_GET['model'] : die();
 
-        if (isset($_SESSION['user_id'])) {
+        if (isset($_SESSION['user_name'])) {
           $user_id = $_SESSION['user_id'];
+          $name = $_SESSION['user_name'];
         }
 
 
@@ -145,6 +147,10 @@ include_once 'header2.php';
             <button class="btn-car-model hover-container" name="submit" type="submit">
                 <div class="btn-car-model-overlay"></div>
                 <b>Specification &amp; Pricing</b>
+            </button>
+            <button class="btn-car-model hover-container" name="submit" type="submit">
+                <div class="btn-car-model-overlay"></div>
+                <a href="prebook.php"><b style="color:white;">Book your own car now!</b></a>
             </button>
           </div>
         </div>
