@@ -150,7 +150,7 @@ include_once 'header2.php';
             </button>
             <button class="btn-car-model hover-container" name="submit" type="submit">
                 <div class="btn-car-model-overlay"></div>
-                <a href="prebook.php"><b style="color:white;">Book your own car now!</b></a>
+                <a href="prebookvariant.php?model=<?php echo"$model";?>"><b style="color:white;">Book your own car now!</b></a>
             </button>
           </div>
         </div>

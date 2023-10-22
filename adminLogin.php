@@ -10,6 +10,12 @@ if(isset($_POST['submit'])){
  $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
 
  $select = mysqli_query($conn, "SELECT * FROM `user` WHERE user_name = '$user' AND password = '$pass' AND admin = '1'") or die('query failed');
+ if(mysqli_num_rows($select) > 0){
+  $row = mysqli_fetch_assoc($select);
+  $_SESSION['user_id'] = $row['user_id'];
+  $_SESSION['user_name'] = $row['user_name'];
+  header('location:editCarPrice.php');
+}
 }
 
 ?>
