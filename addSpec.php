@@ -7,6 +7,7 @@ $model = mysqli_query($conn, "SELECT * FROM carinformation order by id asc");
 
 if(isset($_POST['add_spec'])){
 
+    $Model = $_POST['Model'];
     $ModelId = $_POST['ModelId'];
     $ModelType = $_POST['ModelType'];
     $Price = $_POST['Price'];
@@ -31,8 +32,8 @@ if(isset($_POST['add_spec'])){
     $TyreSize = $_POST['TyreSize'];
     $SpareTyreSize = $_POST['SpareTyreSize'];
 
-    $insert = "INSERT INTO specifications (ModelId, ModelType, Price, EngineType, FuelSupplySystem, Displacement, MaxPower, MaxTorque, Speed, Acceleration, FuelConsumption, Front, Rear, ParkingBrake, Type, TurningRadius, Length, Width, Height, WheelType, WheelSize, TyreSize, SpareTyreSize) 
-    VALUES ('$ModelId', '$ModelType', '$Price', '$EngineType', '$FuelSupplySystem', '$Displacement', '$MaxPower', '$MaxTorque', '$Speed', '$Acceleration', '$FuelConsumption', '$Front', '$Rear', '$ParkingBrake', '$Type', '$TurningRadius', '$Length', '$Width', '$Height', '$WheelType', '$WheelSize', '$TyreSize', '$SpareTyreSize')";    
+    $insert = "INSERT INTO specifications (Model, ModelId, ModelType, Price, EngineType, FuelSupplySystem, Displacement, MaxPower, MaxTorque, Speed, Acceleration, FuelConsumption, Front, Rear, ParkingBrake, Type, TurningRadius, Length, Width, Height, WheelType, WheelSize, TyreSize, SpareTyreSize) 
+    VALUES ('$Model', '$ModelId', '$ModelType', '$Price', '$EngineType', '$FuelSupplySystem', '$Displacement', '$MaxPower', '$MaxTorque', '$Speed', '$Acceleration', '$FuelConsumption', '$Front', '$Rear', '$ParkingBrake', '$Type', '$TurningRadius', '$Length', '$Width', '$Height', '$WheelType', '$WheelSize', '$TyreSize', '$SpareTyreSize')";    
        
        $upload = mysqli_query($conn,$insert);
        if($upload){
@@ -42,8 +43,6 @@ if(isset($_POST['add_spec'])){
           $message[] = 'could not add the specs';
        }
  };
-
-
 
 ?>
 
@@ -170,10 +169,13 @@ td:first-child {
                         <td>Model</td>
                         <td>
                         <select name="ModelId" id="ModelId" required>
-                            <?php while($row = mysqli_fetch_array($model)):;?>
-                            <option value="<?php echo $row['id'];?>"><?php echo $row['model'];?></option>
-                            <?php endwhile; ?>                                           
+                            <?php while ($row = mysqli_fetch_array($model)): ?>
+                                <option value="<?php echo $row['id']; ?>"><?php echo $row['model']; ?></option>
+                            <?php endwhile; ?>
                         </select>
+
+                        <!-- Hidden input field outside of the select -->
+                        <input type="hidden" name="Model" id="Model" value="">
                         </td>
                     </tr>
 
@@ -365,6 +367,18 @@ td:first-child {
             <input type="submit" class="ui-btn" name="add_spec" value="Add Specs" style="margin: 0 auto;">
         </div>
     </form>
+
+    <script>
+        document.getElementById("ModelId").addEventListener("change", function () {
+            var select = this;
+            var selectedOption = select.options[select.selectedIndex];
+            var modelValue = selectedOption.text;
+            document.getElementById("Model").value = modelValue;
+        });
+
+        document.getElementById("ModelId").dispatchEvent(new Event("change"));
+    </script>
+
 
 </body>
 </html>
