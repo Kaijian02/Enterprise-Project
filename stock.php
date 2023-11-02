@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', '', 'honda');
-include 'sidebar.php';
+include 'adminSidebar.php';
 
 $model = mysqli_query($conn, "SELECT * FROM carinformation order by id asc");
 ?>
