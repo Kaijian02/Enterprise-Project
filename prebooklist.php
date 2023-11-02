@@ -1,20 +1,13 @@
-<?php include('config/constants.php'); ?>
+
 
 <?php
-include 'config/config.php';
+
 include 'adminSidebar.php';
 
 
-// if (isset($_GET['delete'])) {
-//     $id = $_GET['delete'];
-//     mysqli_query($conn, "DELETE FROM prebook WHERE id = $id");
-//     echo "<script>alert('Record deleted')</script>";
-//     //header('location:AdminEdit.php');
-// }
-
 ?>
 
-<!-- <!DOCTYPE html> -->
+
 <html>
 
 
