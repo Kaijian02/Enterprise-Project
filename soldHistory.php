@@ -4,7 +4,7 @@
 <html>
     <body onload="sidebarHeight()">
         <div style="padding: 1px; margin-left: 250px;">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for models.." style="margin: 40px 0 0 30px; padding:7px; width: 700px;">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for customer name" style="margin: 40px 0 0 30px; padding:7px; width: 700px;">
             <div class="frame" style="width: 90%; margin-top: 40px;">
                 <div class="row">
                     <div class="col">
