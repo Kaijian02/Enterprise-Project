@@ -12,30 +12,19 @@ include 'adminSidebar.php';
 //     //header('location:AdminEdit.php');
 // }
 
-
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html>
 
-<head>
-    <title>Honda Car Dealership &bull; Car Information</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/css/style.css">
-    <link rel ="stylesheet" href="css/adminPrebookTestdrive.css">
-</head>
 
 
-<body>
-    <div class="container" style="margin-left:14%;">
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search data.." style="padding:10px; margin-bottom:10px;width:100%; text-align:left; border: 1px solid #ddd;">
-        <p style="color:#7f8788">* Tick the checkbox and click the button to delete the prebooking<br/>* Clicking the button indicates that the car has been sold, and the stock has been updated. Purchase Summary will send to customer via email.</br>* If the current car is out of stock, the prebooking will be deleted automatically, and the user will be notified by email.</p>
-        <h1 style="text-align: center;">Prebook Records</h1>
+<body onload="sidebarHeight()">
+    <div style="margin-left:250px;">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search data.." style="margin: 40px 0 0 30px; padding:7px; width: 700px;">
+        <p style="color:#7f8788; margin-left:40px; margin-top:15px;">* Tick the checkbox and click the button to delete the prebooking<br/>* Clicking the button indicates that the car has been sold, and the stock has been updated. Purchase Summary will send to customer via email.</br>* If the current car is out of stock, the prebooking will be deleted automatically, and the user will be notified by email.</p>
+        <h2 style="text-align: center;">Prebook Records</h1>
+        <div class="frame" style="width: 90%; margin-top: 40px;">
         <form action="prebookBuyCancel.php" method="POST">
             <table id="myTable">
                 <thead>
@@ -132,6 +121,7 @@ include 'adminSidebar.php';
                 </tbody>
             </table>
         </form>
+        </div>
     </div>
     <!-- </section> -->
 </body>
