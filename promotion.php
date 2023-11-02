@@ -1,39 +1,32 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', '', 'honda');
 
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-};
+$promo = mysqli_query($conn, "SELECT * FROM promo order by id");
 
-$model = mysqli_query($conn, "SELECT * FROM carinformation where id = $id");
 
-$spec = mysqli_query($conn, "SELECT * FROM specifications where ModelId = $id");
-
-$stock = mysqli_query($conn, "SELECT * FROM stock where modelId = $id order by specId");
-
-if (isset($_POST['add_stock'])) {
-    $modelId = $_POST['modelId'];
-    $specId = $_POST['specId'];
-    $specModel = $_POST['specModel'];
-    $color = $_POST['color'];
-    $stock = $_POST['stock'];
+if (isset($_POST['add_promo'])) {
+    $code = $_POST['code'];
+    $value = $_POST['value'];
+    $dateStart = $_POST['dateStart'];
+    $dateEnd = $_POST['dateEnd'];
+    $status = $_POST['status'];
 
     // Check if a record with the same specId, specModel, and color exists
-    $checkDuplicate = mysqli_query($conn, "SELECT * FROM stock WHERE specId = '$specId' AND specModel = '$specModel' AND color = '$color'");
+    $checkDuplicate = mysqli_query($conn, "SELECT * FROM promo WHERE code = '$code'");
 
     if (mysqli_num_rows($checkDuplicate) > 0) {
-        header("Location: viewStock.php?id=$id&error=duplicate");
+        header("Location: promotion.php?error=duplicate");
         exit; // Add exit here to stop the script execution
     } else {
         // Insert the new stock
-        $insert = "INSERT INTO stock (modelId, specId, specModel, color, stock) 
-            VALUES ('$modelId', '$specId', '$specModel', '$color', '$stock')";
+        $insert = "INSERT INTO promo (code, value, dateStart, dateEnd, status) 
+            VALUES ('$code', '$value', '$dateStart', '$dateEnd', '$status')";
         
         $upload = mysqli_query($conn, $insert);
 
         if ($upload) {
             $message[] = 'New stock added successfully';
-            header("Location: viewStock.php?id=$id");
+            header("Location: promotion.php");
         } else {
             $message[] = 'Could not add the stock';
         }
@@ -42,13 +35,13 @@ if (isset($_POST['add_stock'])) {
 
 if (isset($_GET['delete'])) {
     $deleteId = $_GET['delete'];
-    mysqli_query($conn, "DELETE FROM stock WHERE id = $deleteId");
-    echo "<script>window.location.replace('viewStock.php?id=$id');</script>";
+    mysqli_query($conn, "DELETE FROM promo WHERE id = $deleteId");
+    echo "<script>window.location.replace('promotion.php');</script>";
 }
 
 // Display an alert for duplicate entry
 if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
-    echo "<script>alert('A stock with the same Model Type already exists.');</script>";
+    echo "<script>alert('Code already exists.');</script>";
 }
 
 
@@ -59,7 +52,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
 
 
     <head>
-        <title>Honda Car Dealership &bull; View Stock</title>
+        <title>Honda Car Dealership &bull; Promotion</title>
         <meta charset="UTF-8">
         <link rel="icon" href="img/honda-icon.png" type="image/png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,18 +64,18 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
 
     <style>
         
-        .add-stock{
+        .add-promo{
             background-color: black; 
             color:#fff; 
             border-radius: 5px; 
             padding: 10px 10px; 
             margin-bottom: 30px;
-            width: 200px;
+            width: 300px;
             height: 50px;
             font-size: 18px;
         }
 
-        .add-stock:hover {
+        .add-promo:hover {
             background-color: red;
             -webkit-transform: translateY(-55px);
             -ms-transform: translateY(-5px);
@@ -147,6 +140,17 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
             text-align: center;
         }
 
+        .add-box input[type="date"]{
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 20%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
         .add-box input[type="submit"] {
             background-color: white; 
             color: black; 
@@ -165,13 +169,13 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
         }
 
 
-        .stock-display{
+        .promo-display{
             margin:2rem 0;
             margin-bottom: 100px;
         }
 
-        .stock-display .stock-display-table{
-            width: 70%;
+        .promo-display .promo-display-table{
+            width: 90%;
             margin: 0 auto;
             text-align: center;
             border-width: 1px;
@@ -179,31 +183,31 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
             border-color: black;
         }
 
-        .stock-display .stock-display-table thead{
+        .promo-display .promo-display-table thead{
             background: #fff;
         }
 
-        .stock-display .stock-display-table th{
+        .promo-display .promo-display-table th{
             padding:1rem;
             font-size: 2rem;
         }
 
 
-        .stock-display .stock-display-table td{
+        .promo-display .promo-display-table td{
             padding:1rem;
             font-size: 1rem;
             border-bottom: var(--border);
         }
 
-        .stock-display .stock-display-table .btn:first-child{
+        .promo-display .promo-display-table .btn:first-child{
             margin-top: 0;
         }
 
-        .stock-display .stock-display-table .btn:last-child{
+        .promo-display .promo-display-table .btn:last-child{
             background: crimson;
         }
 
-        .stock-display .stock-display-table .btn:last-child:hover{
+        .promo-display .promo-display-table .btn:last-child:hover{
             background: var(--black);
         }
 
@@ -332,65 +336,63 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
     </div>
 
         <div style="padding: 1px; margin-left: 250px; text-align:center;">
-            <h1 align="center" style="margin-top: 50px; margin-bottom: 50px;">
-                <?php while ($row = mysqli_fetch_assoc($model)) {
-                    echo $row['model']; 
-                }
-                ?>
-                Stock
-            </h1>
+            <h1 align="center" style="margin-top: 50px; margin-bottom: 50px;">Promotion</h1>
 
-            <button type="submit" class="add-stock" onclick="addStock();">Create New Stock</button><br>
-            <a href="stock.php">
-            <button type="submit" class="add-stock">Switch Model</button>
-            </a>
+            <button type="submit" class="add-promo" onclick="addCode();">Create New Promotion Code</button><br>
+
                 <div id="add-box" class="add-box" style="display: none; padding: 10px 10px; border: 1px solid; width: 50%; margin: 50px auto;">
                     <button type="submit" class="hide" onclick="hideBox();">X</button>
                     <h2>Create New Stock</h2>
                     <form action="" method="post">
-                        <input type="hidden" name="modelId" id="modelId" value="<?php echo $id?>">
-                        <label for="specModel">Model Type</label>
-                        <select name="specId" id="specId" required>
-                            <?php while ($row = mysqli_fetch_array($spec)): ?>
-                                <option value="<?php echo $row['Id']; ?>"><?php echo $row['ModelType']; ?></option>
-                            <?php endwhile; ?>
+                        <label for="code">Promotion Code</label>
+                        <input type="text" id="code" name="code" required>
+                        <br>
+                        <label for="value">Discount Value</label>
+                        <input type="number" id="value" name="value" min="0" step="0.01" value="0" required>
+                        <br>
+                        <label for="dateStart">Date Start</label>
+                        <input type="date" id="dateStart" name="dateStart" required>
+                        <br>
+                        <label for="dateEnd">Date End</label>
+                        <input type="date" id="dateEnd" name="dateEnd" required>
+                        <br>
+                        <label for="status">Status</label>
+                        <select id="status" name="status" class="box">
+                            <option value="Enabled">Enabled</option>
+                            <option value="Disabled">Disabled</option>
                         </select>
-                         <!-- Hidden input field outside of the select -->
-                        <input type="hidden" name="specModel" id="specModel" value="">
-                        <br>
-                        <label for="color">Color</label>
-                        <input type="text" id="color" name="color" required>
-                        <br>
-                        <label for="stock">Stock</label>
-                        <input type="number" id="stock" name="stock" min="0" value="0" required>
                         <br>
                         <br>
 
-                        <input type="submit" name="add_stock" value="Add Stock" style="margin-bottom: 30px;">
+                        <input type="submit" name="add_promo" value="Add Code" style="margin-bottom: 30px;">
                     </form>
                 </div>
                 <br>
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
 
-                <div class="stock-display">
-                    <h1 style="color:black; padding-top: 50px; padding-bottom: 50px;">Stock Lists</h1>
-                    <table class="stock-display-table" id="stock-table">
+                <div class="promo-display">
+                    <h1 style="color:black; padding-top: 50px; padding-bottom: 50px;">Promotion Codes</h1>
+                    <table class="promo-display-table" id="promo-table">
                         <thead>
                         <tr>
-                            <th>Model Type</th>
-                            <th>Color</th>
-                            <th>Stock</th>
+                            <th>Code</th>
+                            <th>Discount Value</th>
+                            <th>Date Start</th>
+                            <th>Date End</th>
+                            <th>Status</th>
                             <th>Edit/Delete</th>
                         </tr>
                         </thead>
-                        <?php while($row = mysqli_fetch_assoc($stock)){ ?>
+                        <?php while($row = mysqli_fetch_assoc($promo)){ ?>
                         <tr>
-                            <td><?php echo $row['specModel']; ?></td>
-                            <td><?php echo $row['color']; ?></td>
-                            <td><?php echo $row['stock']; ?></td>
+                            <td><?php echo $row['code']; ?></td>
+                            <td>RM <?php echo $row['value']; ?></td>
+                            <td><?php echo $row['dateStart']; ?></td>
+                            <td><?php echo $row['dateEnd']; ?></td>
+                            <td><?php echo $row['status']; ?></td>
                             <td>
-                            <a href="updateStock.php?edit=<?php echo $row['id'];?>&id=<?php echo $id;?>" class="edit-btn"> <i class="fas fa-edit"></i> Edit </a>
-                            <a href="viewStock.php?delete=<?php echo $row['id'];?>&id=<?php echo $id;?>" class="delete-btn"> <i class="fas fa-trash"></i> Delete </a>
+                            <a href="updatePromo.php?edit=<?php echo $row['id'];?>" class="edit-btn"> <i class="fas fa-edit"></i> Edit </a>
+                            <a href="promotion.php?delete=<?php echo $row['id'];?>" class="delete-btn"> <i class="fas fa-trash"></i> Delete </a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -400,17 +402,17 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
 
         <script>
 
-        function sidebarHeight() {
-            var body = document.body,
-            html = document.documentElement;
+            function sidebarHeight() {
+                var body = document.body,
+                html = document.documentElement;
 
-            var fullHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-                                html.clientHeight, html.scrollHeight, html.offsetHeight );
-            
-            document.getElementById("sideHeight").style.height = fullHeight + "px";
-        }
+                var fullHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+                                    html.clientHeight, html.scrollHeight, html.offsetHeight );
+                
+                document.getElementById("sideHeight").style.height = fullHeight + "px";
+            }
 
-            function addStock() {
+            function addCode() {
             document.getElementById("add-box").style.display = "block";
             }
             
@@ -418,23 +420,12 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
                 document.getElementById("add-box").style.display = "none";
             }
 
-            document.getElementById("specId").addEventListener("change", function () {
-                var select = this;
-                var selectedOption = select.options[select.selectedIndex];
-                var modelValue = selectedOption.text;
-                console.log("Selected Value:", modelValue); // Debugging
-                document.getElementById("specModel").value = modelValue;
-                console.log("Hidden Input Value:", document.getElementById("specModel").value); // Debugging
-            });
-
-            document.getElementById("specId").dispatchEvent(new Event("change"));
-
             function myFunction() {
                 // Declare variables
                 var input, filter, table, tr, td, i, j, txtValue;
                 input = document.getElementById("myInput");
                 filter = input.value.toUpperCase();
-                table = document.getElementById("stock-table");
+                table = document.getElementById("promo-table");
                 tr = table.getElementsByTagName("tr");
 
                 // Start looping from the second row (index 1)
@@ -459,6 +450,19 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
                     }
                 }
             }
+
+            var start = document.getElementById('dateStart');
+            var end = document.getElementById('dateEnd');
+
+            start.addEventListener('change', function() {
+                if (start.value)
+                    end.min = start.value;
+            }, false);
+            end.addEventLiseter('change', function() {
+                if (end.value)
+                    start.max = end.value;
+            }, false);
+
 
         </script>
 
