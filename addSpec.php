@@ -60,8 +60,6 @@ if(isset($_POST['add_spec'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
 
@@ -153,11 +151,32 @@ td:first-child {
     width: 100%;
 }
 
+.backbtn{
+    display: block !important;
+    width: 120px !important;
+    height:40px !important;
+    cursor: pointer !important;
+    margin-left: 250px !important;
+    font-size: 1.2rem !important;
+    padding: 1rem 3rem !important;
+    background-color: white !important; 
+    color: black !important; 
+    border: 2px solid red !important;
+    border-radius: 8px !important;
+    padding: 5px !important;
+    text-align: center !important;
+    }
+
+.backbtn:hover{
+    background-color: #e3e3e3 !important;
+}
+
 </style>
 
 
 <body>
     <div style="padding-top: 80px;">
+    <a href="javascript:history.go(-1);" class="backbtn">Back</a>
         <h1 align="center">Add Specifications</h1>
     </div>
 
@@ -367,7 +386,9 @@ td:first-child {
             <input type="submit" class="ui-btn" name="add_spec" value="Add Specs" style="margin: 0 auto;">
         </div>
     </form>
-
+    
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script>
         document.getElementById("ModelId").addEventListener("change", function () {
             var select = this;
