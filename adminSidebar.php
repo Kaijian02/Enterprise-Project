@@ -27,6 +27,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href="adminIndex.php" class="link-dark rounded">Dashboard</a></li>
                 <li><a href="stockList.php" class="link-dark rounded">Stock List</a></li>
+                <li><a href="promotion.php" class="link-dark rounded">Promotion Code</a></li>
             </ul>
             </div>
         </li>
@@ -60,7 +61,9 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             <div class="collapse show" id="manage-collapse" style="">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href="addcar.php" class="link-dark rounded">Add Car</a></li>
+                <li><a href="addSpec.php" class="link-dark rounded">Add Spec</a></li>
                 <li><a href="editCarPrice.php" class="link-dark rounded">Edit Price</a></li>
+                <li><a href="stock.php" class="link-dark rounded">Edit Stock</a></li>
             </ul>
             </div>
         </li>
