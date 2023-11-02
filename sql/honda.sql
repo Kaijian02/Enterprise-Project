@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2023 at 05:45 AM
+-- Generation Time: Nov 02, 2023 at 03:20 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -79,13 +79,105 @@ CREATE TABLE `carinformation` (
 --
 
 INSERT INTO `carinformation` (`id`, `model`, `homeimage`, `modelinformation`, `modelpic`, `specpic1`, `specpic2`, `specpic3`, `designpic1`, `designpic2`, `designpic3`, `designpic4`, `specdesc1`, `specdesc2`, `specdesc3`, `designdesc1`, `designdesc2`, `designdesc3`, `designdesc4`) VALUES
-(1, 'Accord', 'homeaccord.png', 'The Accord reflects your ambition with a transformation like no other. A bolder presence on the road intrigues at first glance, while next generation techn', 'accord.png', 'accordspec1.png', 'accordspec2.png', 'accordspec3.png', 'accorddesign1.png', 'accorddesign2.png', 'accorddesign3.png', 'accorddesign4.png', 'Presence that intrigues', 'Efficiency across miles', 'Driver- assistive technologies', '8-inch advanced dis[lay audio', '7-inch interactive tft meter cluster', 'wireless charger', 'sport and econ mode'),
+(1, 'Accord', 'homeaccord.png', 'The Accord reflects your ambition with a transformation like no other. A bolder presence on the road intrigues at first glance, while next generation techn', 'accord.png', 'accordspec1.png', 'accordspec2.png', 'accordspec3.jpg', 'accorddesign1.jpg', 'accorddesign2.jpg', 'accorddesign3.jpg', 'accorddesign4.jpg', 'Presence that intrigues', 'Efficiency across miles', 'Driver- assistive technologies', '8-inch advanced display audio', '7-inch interactive tft meter cluster', 'wireless charger', 'sport and econ mode'),
 (2, 'City', 'homecity.png', 'The game reaches a new stage. City levels up once more. Appreciate refinements from the inside out that signal Honda\'s continuing quest for perfection.', 'city.png', 'cityspec1.png', 'cityspec2.jpg', 'cityspec3.jpg', 'citydesign1.jpg', 'citydesign2.png', 'citydesign3.png', 'citydesign4.jpg', 'most powerful in class', 'biggest in its class', 'most complete in its class', 'RE:FINED DESIGN', 'RE:FINED COMFORT', 'RE:FINED PERFORMANCE', 'RE:FINED SAFETY'),
 (3, 'City-Hatchback', 'homecityhatchback.png', 'It\'s time to step up your game and stand out from the rest. Do whatever it takes. Go where no one dares to. Call your own shots. You know no boundaries.', 'cityhatchback.png', 'cityhatchbackspec1.jpg', 'cityhatchbackspec2.jpg', 'cityhatchbackspec3.png', 'cityhatchbackdesign1.png', 'cityhatchbackdesign2.png', 'cityhatchbackdesign3.jpg', 'cityhatchbackdesign4.png', 'A POWERTRAIN THAT KNOWS NO BOUNDARIES', 'TOP-NOTCH SAFETY WITH Honda SENSING', 'ADVANCED CONNECTIVITY FOR YOU AND YOUR CAR', 'Never Ordinary', 'Style, Unlimited', 'Performance, Unlimited', 'Senses, Unlimited'),
 (4, 'Civic', 'homecivic.png', 'Powered by a Passion; refined in its technology and power. Inspired by a Legacy; uniquely rebuilt within a refreshingly open interior. From looks to driving pleasure, step in and feel exhilaration take over. This is the Future. This is the Civic.', 'civic.png', 'civicspec1.png', 'civicspec2.png', 'civicspec3.jpg', 'civicdesign1.jpeg', 'civicdesign2.png', 'civicdesign3.jpeg', 'civicdesign4.jpeg', 'ALWAYS BE THE CENTRE OF ATTENTION', 'BUILT TO OVERTAKE AND EXHILARATE', '9 ADVANCED DRIVER-ASSISTIVE TECHNOLOGIES', 'Design Of A New Future', 'Comfort Reborn From A Legacy', 'Performance Tuned To Your Passion', 'Drive The Future In Full Safety'),
 (5, 'CR-V', 'homecrv.png', 'The ultimate SUV, always CR-V. Its advantage is undeniable, its legacy unquestionable. Belonging to those who truly desire ENDLESS SUPREMACY.', 'crv.png', 'crvspec1.jpg', 'crvspec2.jpg', 'crvspec3.jpg', 'crvdesign1.jpg', 'crvdesign2.jpg', 'crvdesign3.jpg', 'crvdesign4.png', 'CLASS-LEADING FEATURE', 'EFFORTLESS ACCESS TO BOOT SPACE', '8 ADVANCED DRIVER-ASSISTIVE TECHNOLOGIES', 'Unmistakable silhouette', 'Prestigious ambience', 'Conquer any distance', 'Maximise the safety of all occupants'),
 (6, 'HR-V', 'homehrv.png', 'Magnetism. Influence. Confidence. Lay claim to it all with HR-V.', 'hrv.png', 'hrvspec1.png', 'hrvspec2.png', 'hrvspec3.png', 'hrvdesign1.png', 'hrvdesign2.png', 'hrvdesign3.png', 'hrvdesign4.png', 'PERFECTION OF THE DRIVE IN THREE DIFFERENT MODES THAT BALANCES POWER AND EFFICIENCY.', 'MULTI-UTILITY SEATS THAT FIT YOUR EVERY NEED.', 'SAFETY IN THE ELIMINATION OF BLIND SPOTS AND SEE WHAT\'S APPROACHING.', 'Command Attention', 'Command Comfort', 'Command Power', 'Command Intuition'),
 (7, 'WR-V', 'homewrv.png', 'Don\'t follow trends, create them. Don\'t hold back, go all the way. Don\'t settle for ordinary, embrace the extraordinary. IT\'S YOUR TIME TO LEAD THE NEW WAVE WITH THE WR-V.', 'wrv.png', 'wrvspec1.jpg', 'wrvspec2.jpg', 'wrvspec3.jpg', 'wrvdesign1.png', 'wrvdesign2.jpg', 'wrvdesign3.png', 'wrvdesign4.jpg', 'FEEL THE UNMATCHED POWER AND ACCELERATION OF AN EXTRAORDINARY ENGINE FOR AN EXHILARATING RIDE.', 'IMPROVE VISIBILITY AND SAFETY BY MINIMISING BLIND SPOTS WHEN CHANGING LANES.', 'ENJOY A VISUALLY STUNNING AND THRILLING AERODYNAMIC DESIGN.', 'TRENDSETTING STYLE', 'TRENDSETTING COMFORT', 'TRENDSETTING PERFORMANCE', 'TRENDSETTING SAFETY');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carsold`
+--
+
+CREATE TABLE `carsold` (
+  `id` int(11) NOT NULL,
+  `specModel` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `soldnum` int(11) NOT NULL,
+  `price` double NOT NULL,
+  `year` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `stockId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `carsold`
+--
+
+INSERT INTO `carsold` (`id`, `specModel`, `color`, `soldnum`, `price`, `year`, `month`, `stockId`) VALUES
+(1, 'Accord 1.5 TC', 'Silver', 3, 187060, 2023, 10, 19),
+(2, 'Accord 1.5 TC-P', 'White', 1, 197060, 2023, 10, 17),
+(3, 'City 1.5L S', 'White', 1, 84560, 2023, 10, 20),
+(4, 'Accord 1.5 TC', 'White', 1, 187060, 2023, 11, 19);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `history`
+--
+
+CREATE TABLE `history` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact` int(20) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `paymentmethod` varchar(255) NOT NULL,
+  `price` double NOT NULL,
+  `account` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `history`
+--
+
+INSERT INTO `history` (`id`, `name`, `email`, `contact`, `model`, `color`, `paymentmethod`, `price`, `account`, `date`) VALUES
+(1, 'Tan Zhi', 'lawkaijian@gmail.com', 194076897, 'Accord 1.5 TC', 'Black', 'Credit or Debit', 187060, 'Tan Zhi', '2023-10-20'),
+(2, 'Tan Zhi', 'lawkaijian@gmail.com', 194076897, 'Accord 1.5 TC', 'Black', 'Credit or Debit', 187060, 'Tan Zhi', '2023-10-20'),
+(3, 'Tan Zhi', 'tz@gmail.com', 123456789, 'City 1.5L S', 'White', 'Credit or Debit', 84560, 'Tan Zhi', '2023-10-20'),
+(4, 'Tan Zhi', 'lawkaijian@gmail.com', 194076897, 'Accord 1.5 TC', 'Black', 'Credit or Debit', 187060, 'Tan Zhi', '2023-10-20'),
+(5, 'Jerry', 'jerry@gmail.com', 194076897, 'CR-V 1.5 TC-P 2WD', 'Black', 'Credit or Debit', 165430, 'Tan Zhi', '2023-10-20'),
+(6, 'ck', 'cklee@gmail.com', 194076897, 'WR-V 1.5L RS', 'Black', 'Online banking', 107560, 'Tan Zhi', '2023-10-20'),
+(7, 'hong', 'hong@gmail.com', 123456789, 'HR-V 1.5L T E', 'Silver', 'Credit or Debit', 130560, 'Tan Zhi', '2023-10-20'),
+(8, 'Law Kai Jian', 'lawkaijian@gmail.com', 194076897, 'Civic 1.5L E', 'Silver', 'Online banking', 131560, 'Tan Zhi', '2023-10-20'),
+(9, 'Tan Zhi', 'volcanoyung.tzy@gmail.com', 123456789, 'Accord 1.5 TC', 'Silver', 'Credit or Debit', 187060, 'Tan Zhi', '2023-10-23'),
+(10, 'Tan Zhi', 'volcanoyung.tzy@gmail.com', 123456789, 'Accord 1.5 TC', 'Silver', 'Credit or Debit', 187060, 'Tan Zhi', '2023-10-22'),
+(11, 'Tan Zhi', 'volcanoyung.tzy@gmail.com', 123456789, 'Accord 1.5 TC-P', 'White', 'Credit or Debit', 197060, 'Tan Zhi', '2023-10-23'),
+(12, 'Tan Zhi', 'volcanoyung.tzy@gmail.com', 123456789, 'Accord 1.5 TC', 'Silver', 'Credit or Debit', 187060, 'Tan Zhi', '2023-10-23'),
+(13, 'Tan Zhi', 'volcanoyung.tzy@gmail.com', 123456789, 'City 1.5L S', 'White', 'Credit or Debit', 84560, 'Tan Zhi', '2023-10-23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prebook`
+--
+
+CREATE TABLE `prebook` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact` int(20) NOT NULL,
+  `paymentmethod` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `price` double NOT NULL,
+  `account` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `prebook`
+--
+
+INSERT INTO `prebook` (`id`, `name`, `email`, `contact`, `paymentmethod`, `model`, `color`, `price`, `account`, `date`, `user_id`) VALUES
+(73, 'Tan Zhi', 'volcanoyung.tzy@gmail.com', 123456789, 'Credit or Debit', 'Accord 1.5 TC', 'White', 187060, 'Tan Zhi', '2023-11-01', 2);
 
 -- --------------------------------------------------------
 
@@ -176,11 +268,35 @@ CREATE TABLE `stock` (
 
 INSERT INTO `stock` (`id`, `modelId`, `specId`, `specModel`, `color`, `stock`) VALUES
 (16, 1, 1, 'Accord 1.5 TC', 'Black', 40),
-(17, 1, 2, 'Accord 1.5 TC-P', 'White', 6),
-(19, 1, 1, 'Accord 1.5 TC', 'Silver', 11),
-(20, 2, 3, 'City 1.5L S', 'White', 10),
+(17, 1, 2, 'Accord 1.5 TC-P', 'White', 5),
+(19, 1, 1, 'Accord 1.5 TC', 'Silver', 8),
+(20, 2, 3, 'City 1.5L S', 'White', 9),
 (21, 7, 24, 'City Hatchback 1.5L S', 'Black', 23),
 (22, 1, 1, 'Accord 1.5 TC', 'White', 50);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testdrive`
+--
+
+CREATE TABLE `testdrive` (
+  `id` int(11) NOT NULL,
+  `name` varchar(155) NOT NULL,
+  `email` varchar(155) NOT NULL,
+  `contact` int(20) NOT NULL,
+  `testdrivemodel` varchar(155) NOT NULL,
+  `preferreddate` varchar(155) NOT NULL,
+  `preferredtime` varchar(155) NOT NULL,
+  `user` varchar(155) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `testdrive`
+--
+
+INSERT INTO `testdrive` (`id`, `name`, `email`, `contact`, `testdrivemodel`, `preferreddate`, `preferredtime`, `user`) VALUES
+(23, 'asd asdf', 'lawkaijian@gmail.com', 194076897, 'Accord', '2023-10-18', '09:00 AM', 'Law');
 
 -- --------------------------------------------------------
 
@@ -221,6 +337,24 @@ ALTER TABLE `carinformation`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `carsold`
+--
+ALTER TABLE `carsold`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `history`
+--
+ALTER TABLE `history`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `prebook`
+--
+ALTER TABLE `prebook`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `specifications`
 --
 ALTER TABLE `specifications`
@@ -230,6 +364,12 @@ ALTER TABLE `specifications`
 -- Indexes for table `stock`
 --
 ALTER TABLE `stock`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `testdrive`
+--
+ALTER TABLE `testdrive`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -249,6 +389,24 @@ ALTER TABLE `carinformation`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `carsold`
+--
+ALTER TABLE `carsold`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `history`
+--
+ALTER TABLE `history`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `prebook`
+--
+ALTER TABLE `prebook`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+
+--
 -- AUTO_INCREMENT for table `specifications`
 --
 ALTER TABLE `specifications`
@@ -259,6 +417,12 @@ ALTER TABLE `specifications`
 --
 ALTER TABLE `stock`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `testdrive`
+--
+ALTER TABLE `testdrive`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `user`

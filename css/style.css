@@ -324,3 +324,11 @@ div.sticky {
     background-color: #cbcbcb;
 }
 
+.admin tr:nth-child(even) {
+    background-color: #e9e7e7;
+}
+
+.admin p {
+    cursor: pointer;
+}
+

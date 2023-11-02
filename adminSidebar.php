@@ -25,9 +25,8 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             </button>
             <div class="collapse show" id="home-collapse" style="">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded">Dashboard</a></li>
-                <li><a href="#" class="link-dark rounded">Updates</a></li>
-                <li><a href="#" class="link-dark rounded">Reports</a></li>
+                <li><a href="adminIndex.php" class="link-dark rounded">Dashboard</a></li>
+                <li><a href="stockList.php" class="link-dark rounded">Stock List</a></li>
             </ul>
             </div>
         </li>
@@ -37,8 +36,9 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             </button>
             <div class="collapse show" id="dashboard-collapse" style="">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded">Overview</a></li>
-                <li><a href="#" class="link-dark rounded">Monthly</a></li>
+                <li><a href="soldOverview.php" class="link-dark rounded">Overview</a></li>
+                <li><a href="monthlySold.php" class="link-dark rounded">Monthly</a></li>
+                <li><a href="allMonthlySold.php" class="link-dark rounded">All Month</a></li>
             </ul>
             </div>
         </li>
@@ -48,9 +48,19 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             </button>
             <div class="collapse show" id="orders-collapse" style="">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded">Booking</a></li>
-                <li><a href="#" class="link-dark rounded">Processed</a></li>
-                <li><a href="#" class="link-dark rounded">Returned</a></li>
+                <li><a href="prebooklist.php" class="link-dark rounded">Bookings</a></li>
+                <li><a href="soldHistory.php" class="link-dark rounded">History</a></li>
+            </ul>
+            </div>
+        </li>
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#manage-collapse" aria-expanded="true">
+            Manage Cars
+            </button>
+            <div class="collapse show" id="manage-collapse" style="">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="addcar.php" class="link-dark rounded">Add Car</a></li>
+                <li><a href="editCarPrice.php" class="link-dark rounded">Edit Price</a></li>
             </ul>
             </div>
         </li>
