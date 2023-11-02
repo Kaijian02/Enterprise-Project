@@ -49,7 +49,7 @@ $model = mysqli_query($conn, "SELECT * FROM carinformation order by id asc");
                 echo "
                     <div class='col-sm-3 p-3'>
                         <a href='viewStock.php?id={$row['id']}'>
-                            <img src='img/{$row['modelpic']}' alt='Model Image'/>
+                            <img src='img/{$row['model']}/{$row['homeimage']}' alt='Model Image'/>
                             <p style='text-align: center;'>{$row['model']}</p>
                         </a>
                     </div>";
