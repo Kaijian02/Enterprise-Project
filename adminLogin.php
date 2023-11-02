@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
   $row = mysqli_fetch_assoc($select);
   $_SESSION['user_id'] = $row['user_id'];
   $_SESSION['user_name'] = $row['user_name'];
-  header('location:editCarPrice.php');
+  header('location:adminIndex.php');
 }
 }
 

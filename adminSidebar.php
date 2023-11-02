@@ -71,9 +71,6 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             </button>
             <div class="collapse show" id="account-collapse" style="">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-dark rounded">User Profile</a></li>
-                <li><a href="#" class="link-dark rounded">Admin Profile</a></li>
-                <li><a href="#" class="link-dark rounded">Settings</a></li>
                 <li><a href="config/adminLogout.php" class="link-dark rounded">Sign out</a></li>
             </ul>
             </div>
