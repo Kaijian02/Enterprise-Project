@@ -146,7 +146,7 @@ chart.render();
       };
    }
     
-   http.open('POST', "script.php", true);
+   http.open('POST', "graphScript.php", true);
    http.setRequestHeader("content-type", "application/x-www-form-urlencoded");
    http.send("category="+categoryName);
    

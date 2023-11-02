@@ -1,5 +1,5 @@
 <?php 
-   require "functions.php";
+   require "graphFunctions.php";
  
    if(isset($_POST['category'])){
       $category = $_POST['category'];
