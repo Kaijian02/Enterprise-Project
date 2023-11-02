@@ -119,6 +119,48 @@ if (isset($_POST['book'])) {
     .error-message {
         color: red;
     }
+
+    .promoLabel{
+        margin-top: 30px;
+        color: red;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .promo {
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 3px solid #000;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .btn-promo{
+        display: block;
+        width: 160px;
+        height:50px;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        margin-top: 10px !important;
+        margin: 0 auto;
+        font-size: 20px;
+        padding: 10px;
+        background-color: white; 
+        color: black; 
+        border: 2px solid red;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .btn-promo:hover{
+        background-color: red;
+        color: white;
+        transform: translateY(-2px);
+    }
 </style>
 
 <body>
@@ -212,9 +254,9 @@ if (isset($_POST['book'])) {
                                     </td>
 
                                     <td>
-                                        <span class=""></span>RM
-                                        <?php echo "$price"; ?></span>
-                                        <input name="price" type="hidden" value="<?php echo $price; ?>">
+                                        <span class=""></span><div id="display_price">RM
+                                        <?php echo "$price"; ?></div></span>
+                                        <input name="price" id="price" type="hidden" value="<?php echo $price; ?>">
                                     </td>
                                 </tr>
                                 <tr style="background:#f2f2f2;">
@@ -238,7 +280,24 @@ if (isset($_POST['book'])) {
                                         <span class="">RM</span>100.00</span>
                                     </th>
                                 </tr>
+
+                                <tr style="background:#f2f2f2; display:none">
+
+                                <th class="">
+                                    Discount Amount
+                                </th>
+
+                                <th class="">
+                                    <span class="">RM</span><span><div id="discountAmount">0.00</div></span>
+                                </th>
+                            </tr>
                             </table>
+                            <label for="promoCode" class="promoLabel">Apply promotion code:</label>                
+                            <input type="text" id="promoCode" name="promoCode" class="promo" placeholder="Promotion Code">
+                            <button id="apply" class="btn-promo">Apply</button>
+                            <br>
+                            <b><span id="promo-message" style="color:green;"></span></b>          
+                            <b><span id="promo-error-message" style="color:red;"></span></b>      
                         </div>
                     </div>
                 </div>
@@ -248,7 +307,8 @@ if (isset($_POST['book'])) {
 </body>
 
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="prebookform.js"></script>
 <script>
     function validateForm() {
         // Get a reference to the checkbox element
@@ -275,6 +335,33 @@ if (isset($_POST['book'])) {
             return true;
         }
     }
+
+    $("#apply").click(function() {
+    if ($('#promoCode').val() != '') {
+        $.ajax({
+            type: "POST",
+            url: "checkPromo.php",
+            data: {
+                coupon_code: $('#promoCode').val()
+            },
+            success: function(dataResult) {
+                var dataResult = JSON.parse(dataResult);
+                if (dataResult.statusCode == 200) {
+                    var after_apply = $('#price').val() - dataResult.value;
+                    $('#price').val(after_apply);
+                    document.getElementById('display_price').textContent = 'RM ' + after_apply.toFixed(2);
+                    $('#apply').hide();
+                    $('#promo-message').html("Promocode applied successfully !");
+                } else if (dataResult.statusCode == 201) {
+                    $('#promo-error-message').html("Invalid promotion code !");
+                }
+            }
+        });
+    } else {
+        $('#promo-error-message').html("Promotion code cannot be blank. Please Enter a Valid Promotion code !");
+    }
+    });
+
 </script>
 
 

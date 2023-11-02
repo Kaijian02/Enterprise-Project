@@ -12,7 +12,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Power of Dreams | Honda Malaysia</title>
     <script src="https://kit.fontawesome.com/1527c486de.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="img/favicon.ico" type="image/ico">
+    <link rel="icon" href="img/honda-icon.png" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -26,6 +26,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="//code.tidio.co/qied5pfxufauymib8y3r8j4wc8ksprqo.js" async></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
     <style>
         * {
@@ -40,6 +41,16 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
         body {
             min-height: 100vh;
             /* font-family: Arial, sans-serif; */
+            /* margin: 0px; */
+        }
+
+        h3 {
+            text-align: center;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: 2.0px;
         }
 
         header {
@@ -103,6 +114,10 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             margin-top: -1.5px;
 
         }
+
+        .text-center {
+            text-align: center !important;
+        }
     </style>
 
 <body>
@@ -112,7 +127,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
 
 
         <!-- <div class="logo"> -->
-        <a href>
+        <a href="index.php">
             <img class="toplogo" src="https://www.honda.com.my/img/interface/honda-logo-pod2.svg"
                 alt="Honda - The Power of Dreams">
         </a>
@@ -120,7 +135,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
 
 
         <?php
-        $select = mysqli_query($conn, "SELECT * FROM car");
+        $select = mysqli_query($conn, "SELECT * FROM carinformation");
         ?>
 
         <nav class="navbar2">
@@ -129,14 +144,15 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
                 <li><a href="#">Models<i class="fa fa-sort-desc" style="margin-left: 6px;"></i></a>
                     <ul>
                         <?php while ($crow = mysqli_fetch_assoc($select)) { ?>
-                            <li><a href="#">
-                                    <?php echo $crow['Model']; ?>
+                            <li><a href="carInformation.php?model=<?php echo $crow['model']; ?>">
+                                    <?php echo $crow['model']; ?>
                                 </a></li>
                         <?php } ?>
                     </ul>
                 </li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">About</a></li>
+                <li><a href="testdrivebooking.php">Test Drive</a></li>
                 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
                     <ul>
                         <li>
@@ -146,7 +162,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
                         </li>
                     </ul>
                 </li>
-                <li><a href="#" title="Login now!"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                <li><a href="logout.php" title="Login now!"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
             </ul>
 
         </nav>
