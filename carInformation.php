@@ -146,7 +146,7 @@ include_once 'header2.php';
           <div class="col">
             <button class="btn-car-model hover-container" name="submit" type="submit">
                 <div class="btn-car-model-overlay"></div>
-                <b>Specification &amp; Pricing</b>
+                <a href="comparison.php"><b style="color:white;">Specification &amp; Pricing</b></a>
             </button>
             <button class="btn-car-model hover-container" name="submit" type="submit">
                 <div class="btn-car-model-overlay"></div>
