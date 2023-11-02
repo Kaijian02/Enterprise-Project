@@ -51,8 +51,6 @@ if (isset($_POST['update'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
 
@@ -98,14 +96,15 @@ body {
 .acc_settings label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-top: 30px;
 }
 
 .acc_settings input[type="email"],
 .acc_settings input[type="password"] {
   padding: 10px;
+  width: 350px;
   font-size: 16px;
-  border-radius: 3px;
+  border-radius: 6px;
   text-align: center;
   text-transform: none;
 }
@@ -116,6 +115,7 @@ body {
   padding: 10px 20px;
   border: solid red;
   border-radius: 5px;
+  margin-top: 50px;
   border-width: 1px;
   font-size: 16px;
   cursor: pointer;
