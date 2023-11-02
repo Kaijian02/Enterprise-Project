@@ -1,5 +1,6 @@
+
 <?php
-include 'config.php';
+include_once 'adminSidebar.php';
 
 if (isset($_POST['add'])) {
 
@@ -266,7 +267,7 @@ if (isset($_POST['add'])) {
   </script>
 </head>
 
-<body id="grad" style="padding-top: 80px;">
+<body id="grad">
   <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
     <!--car model-->
     <div class="main">

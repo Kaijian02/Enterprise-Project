@@ -1,18 +1,17 @@
 <?php
 include_once 'header2.php';
+
+if (isset($_SESSION['user_name'])) {
+    $name = $_SESSION['user_name'];
+    $id = $_SESSION['user_id'];
+    echo "User id: " . $id;
+    echo "User name: " . $name;
+}
 ?>
 
 <head>
 
     <style>
-        h3 {
-            text-align: center;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-weight: 300;
-            line-height: 1.5;
-            letter-spacing: 2.0px;
-        }
 
         /* Carousel Models */
         .wrapper {
@@ -82,9 +81,7 @@ include_once 'header2.php';
             padding-right: 15px;
         }
 
-        .text-center {
-            text-align: center !important;
-        }
+
 
         .text {
             padding: 10px;
@@ -150,7 +147,7 @@ include_once 'header2.php';
 </section>
 
 <?php 
-    $select = mysqli_query($conn, "SELECT * FROM car");
+    $select = mysqli_query($conn, "SELECT * FROM carinformation");
 ?>
 <!-- Carausel Modesl-->
 <section style="width: 100%; padding:4em 0; background-color:black;">
@@ -159,12 +156,8 @@ include_once 'header2.php';
         <i id="left" class="fa-solid fa-angle-left"></i>
         <div class="carousel2">
         <?php while($crow = mysqli_fetch_assoc($select)){ ?>
-            <a href="#carDetailedPage" title="<?php echo $crow['Model']; ?>"><img src="img/<?php echo $crow['Image']; ?>" alt="img1"></a>
+            <a href="carInformation.php?model=<?php echo $crow['model']; ?>" title="<?php echo $crow['model']; ?>"><img src="img/<?php echo $crow['model']; ?>/<?php echo $crow['homeimage']; ?>" alt="img1"></a>
             <?php } ?>
-            <!-- <img src="img/city.png" alt="img1">
-            <img src="img/hrv.png" alt="img1">
-            <img src="img/accord.png" alt="img1">
-            <img src="img/crv.png" alt="img1"> -->
         </div>
         <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
@@ -194,7 +187,7 @@ include_once 'header2.php';
 
                 </div>
                 <div class="col-md-4">
-                    <a href="#calculator" class="icon-style">
+                    <a href="calculator.php" class="icon-style">
                         <div class="text-center">
                             <div class="icon" style="margin: auto;"><i class="fa fa-calculator fa-2x"
                                     aria-hidden="true"></i></i>

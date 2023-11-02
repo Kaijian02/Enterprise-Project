@@ -150,19 +150,18 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
                         <?php } ?>
                     </ul>
                 </li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+                <!-- <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li> -->
                 <li><a href="testdrivebooking.php">Test Drive</a></li>
                 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
                     <ul>
                         <li>
-                            <a href="BookingHistory.php">Purchase History</a>
-                            <a href="ChangePassword.php">User Profile</a>
-                            <a href="logout.php">Logout</a>
+                            <a href="account.php">User Profile</a>
+                            <a href="config/logout.php">Logout</a>
                         </li>
                     </ul>
                 </li>
-                <li><a href="logout.php" title="Login now!"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                <li><a href="config/logout.php" title="Login now!"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
             </ul>
 
         </nav>
