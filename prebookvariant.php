@@ -3,6 +3,7 @@ include_once 'header2.php';
 ?>
 
 <?php
+if (isset($_SESSION['user_id'])) {
 $model = isset($_GET['model']) ? $_GET['model'] : die();
 $variant = isset($_GET['variant']) ? $_GET['variant'] : null;
 
@@ -24,6 +25,11 @@ if ($count > 0) {
         $modelpic = $row['modelpic'];
 
     }
+}
+}
+else{
+    echo "User ID is not set in the session.";
+    echo "<script>alert('Please login first.'); window.location.href = 'login.php';</script>";
 }
 ?>
 

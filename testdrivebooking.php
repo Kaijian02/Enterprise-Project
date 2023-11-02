@@ -4,22 +4,17 @@ include_once 'header2.php';
 session_start();
 error_reporting(0);
 
-// if (isset($_SESSION['users_id'])) {
-//     $user_id = $_SESSION['users_id'];
-//     $username = $_SESSION['name'];
+if (isset($_SESSION['user_id'])) {
 
 if (isset($_POST['book'])) {
-    //        $user_id = $_SESSION['users_id'];
-    //        $username = $_SESSION['name'];
+ 
     $name = $_POST['name'];
     $email = $_POST['email'];
-    // $prefix = $_POST['prefix'];
     $contact_no = $_POST['contact_no'];
     $test_drive_model = $_POST['car_model'];
     $preferred_date = $_POST['preferred_date'];
     $preferred_time = $_POST['preferred_time'];
-    $user = "Law";
-
+    $user = $_SESSION['user_name'];
 
     $reservation_query = mysqli_query($conn, "INSERT INTO `testdrive`(name, email, contact, testdrivemodel, preferreddate, preferredtime, user) VALUES" . "('$name', '$email','$contact_no','$test_drive_model','$preferred_date','$preferred_time','$user')") or die('query failed');
     if ($reservation_query) {
@@ -27,9 +22,10 @@ if (isset($_POST['book'])) {
     }
 }
 ;
-// } else {
-//     echo "User ID is not set in the session.";
-// }
+} else {
+    echo "User ID is not set in the session.";
+    echo "<script>alert('Please login first.'); window.location.href = 'login.php';</script>";
+}
 ?>
 
 
