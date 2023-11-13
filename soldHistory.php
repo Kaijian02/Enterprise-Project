@@ -14,6 +14,9 @@
                         Email
                     </div>
                     <div class="col">
+                        Model Type
+                    </div>
+                    <div class="col">
                         Price (RM)
                     </div>
                     <div class="col">
@@ -49,7 +52,10 @@
                                     <p style="margin-bottom: 0;">'.$name.'</p>
                                 </td>
                                 <td class="col">
-                                    <p style="margin-bottom: 0; font-weight:500;">'.$email.'</p>
+                                    <p style="margin-bottom: 0; font-weight:500; margin: auto;">'.$email.'</p>
+                                </td>
+                                <td class="col">
+                                    <p style="margin-bottom: 0; font-weight:500; margin: auto;">'.$model.'</p>
                                 </td>
                                 <td class="col" style="margin: auto;">
                                     <p id="price" class="admin" style="letter-spacing: 2px; margin-bottom: 0; font-weight:500;">'.number_format((float)$price, '2', '.', ',').'</p>
@@ -64,16 +70,5 @@
                 </table>
             </div>
         </div>
-        <script>
-            function editPrice(model) {
-                var np = prompt("How would you like to edit your price?");
-                if (np!= null) {
-                    var c = confirm ("are you sure you want to change the price to " + np + "?");
-                    if (c) {
-                        window.location.href = "updatePrice.php?price=" + encodeURIComponent(np) + "&model_type=" + encodeURIComponent(model);
-                    }
-                }
-            }
-        </script>
     </body>
 </html>
