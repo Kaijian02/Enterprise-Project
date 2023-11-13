@@ -70,9 +70,7 @@ if(isset($_POST['submit'])){
                        <b>Log In</b>
                      </button>
                 </div>
-                <div class="field">
-                     <a style="font-family:'verdana'" href="password-reset.php">Forgot password?</a>
-                </div>
+                
                 <div style="width:90%"><hr color="#999999"></div>
 
                 <a href="register.php" class="btn-register" style="font-family:'verdana'; padding: 10px 30px;"><b>Create an Account</b></a>

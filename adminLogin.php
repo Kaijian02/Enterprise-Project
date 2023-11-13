@@ -53,9 +53,6 @@ if(isset($_POST['submit'])){
                        <b>Log In</b>
                      </button>
                 </div>
-                <div class="field adm">
-                     <a style="font-family:'verdana'" href="password-reset.php">Reset password?</a>
-                </div>
             </form>
         </div>
       </div>
