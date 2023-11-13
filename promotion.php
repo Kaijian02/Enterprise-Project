@@ -350,7 +350,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'duplicate') {
 
                 <div id="add-box" class="add-box" style="display: none; padding: 10px 10px; border: 1px solid; width: 50%; margin: 50px auto;">
                     <button type="submit" class="hide" onclick="hideBox();">X</button>
-                    <h2>Create New Stock</h2>
+                    <h2>Create New Promotion Code</h2>
                     <form action="" method="post">
                         <label for="code">Promotion Code</label>
                         <input type="text" id="code" name="code" required>
