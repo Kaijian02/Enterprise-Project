@@ -2,21 +2,20 @@
 include_once 'header2.php';
 
 
-// if (isset($_SESSION['user_id'])) {
-//     $user_id = $_SESSION['user_id'];
-//     $name = $_SESSION['user_name'];
-// }
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+    $name = $_SESSION['user_name'];
+}
 
 ?>
 
 <?php
-// $model = isset($_GET['model']) ? $_GET['model'] : null;
-// $variant = isset($_GET['variant']) ? $_GET['variant'] : die();
-// $color = isset($_GET['color']) ? $_GET['color'] : die();
 
 $variant = $_POST['variant'];
 $color = $_POST['color'];
 $model = $_POST['model'];
+
+
 
 $sql = "SELECT * FROM specifications WHERE ModelType='$variant'";
 $res = mysqli_query($conn, $sql);
@@ -29,31 +28,6 @@ if ($count > 0) {
 
     }
 }
-
-
-if (isset($_POST['book'])) {
-    //        $user_id = $_SESSION['users_id'];
-    //        $username = $_SESSION['name'];
-    $name_form = $_POST['form_name'];
-    $email = $_POST['email'];
-    $contact_no = $_POST['contact_no'];
-    $payment_method = $_POST['payment_method'];
-    $variant = $_POST['variant'];
-    $color = $_POST['color'];
-    $price = $_POST['price'];
-    $date = date('Y-m-d');
-    $name = $_POST['user_name'];
-    $user_id = $_POST['user_id'];
-
-    $prebook = mysqli_query($conn, "INSERT INTO `prebook`(name, email, contact, paymentmethod, model, color, price, account, date, user_id) VALUES" . "('$name_form', '$email','$contact_no','$payment_method','$variant','$color','$price', '$name', '$date', '$user_id')") or die('query failed');
-    if ($prebook) {
-        echo "<script>alert('Prebook done'); window.location.href = 'index.php';</script>";
-    }
-}
-;
-// } else {
-//     echo "User ID is not set in the session.";
-// }
 
 ?>
 
@@ -171,13 +145,15 @@ if (isset($_POST['book'])) {
             <p>Our Friendly Sales Advisor will be in touch after you have completed your booking.</p>
         </div>
 
-        <form method="post" onsubmit="return validateForm()">
+        <form action="prebookemail.php" method="post" onsubmit="return validateForm()">
             <div class="container" style="margin-top:60px; width:100%;">
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="payment-form" style="display:block;">
                             <label style="display:block;">Name <span style="color:red;">*</span></label>
                             <input type="text" class="input-payment" name="form_name" id="" value="" required>
+                            <input type="text" class="input-payment" name="user_id" id="" value="<?php echo $user_id; ?>" hidden>
+                            <input type="text" class="input-payment" name="user_name" id="" value="<?php echo $user_name; ?>" hidden>
                         </div>
                         <div class="payment-form" style="display:block;">
                             <label style="display:block;">Email <span style="color:red;">*</span></label>
