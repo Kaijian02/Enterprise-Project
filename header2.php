@@ -26,7 +26,6 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="//code.tidio.co/qied5pfxufauymib8y3r8j4wc8ksprqo.js" async></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 
     <style>
         * {
@@ -161,37 +160,13 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
                         </li>
                     </ul>
                 </li>
-                <li><a href="config/logout.php" title="Login now!"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                <li><a href="login.php" title="Login now!"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
             </ul>
 
         </nav>
 
-
-        <!-- <div class="search-icon" onclick="toggleSearch()" style=""></div>
-            <div class="search-bar-container">
-
-                <form>
-                    <input type="text" class="search-bar" placeholder="Search...">
-                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></i>
-                    </button>
-                </form>
-            </div> -->
-
-
-
-
     </header>
 
-
-
-
-    <script>
-        // JavaScript function to toggle the search bar
-        function toggleSearch() {
-            var searchIcon = document.querySelector('.search-icon');
-            searchIcon.classList.toggle('active');
-        }
-    </script>
 </body>
 
 </html>

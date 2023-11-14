@@ -176,7 +176,7 @@ if (isset($_SESSION['user_name'])) {
             <div class="row">
                 <!-- <div class="col-md-3"></div> -->
                 <div class="col-md-4">
-                    <a href="#compare" class="icon-style">
+                    <a href="comparison.php" class="icon-style">
                         <div class="text-center">
                             <div class="icon" style="margin: auto;"><i class="fa fa-compress fa-2x"
                                     aria-hidden="true"></i></i>
@@ -197,11 +197,11 @@ if (isset($_SESSION['user_name'])) {
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#prebook" class="icon-style">
+                    <a href="testdrivebooking.php" class="icon-style">
                         <div class="text-center">
                             <div class="icon" style="margin: auto;"><i class="fa fa-id-card fa-2x"
                                     aria-hidden="true"></i></i>
-                                <div class="text">Pre-Booking</div>
+                                <div class="text">Test Drive</div>
                             </div>
                         </div>
                     </a>
