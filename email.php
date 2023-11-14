@@ -1,7 +1,7 @@
 <?php
-require 'D:/xampp/htdocs/PHPMailer-6.8.0/src/PHPMailer.php';
-require 'D:/xampp/htdocs/PHPMailer-6.8.0/src/SMTP.php';
-require 'D:/xampp/htdocs/PHPMailer-6.8.0/src/Exception.php';
+require 'C:/xampp/htdocs/PHPMailer-6.8.0/src/PHPMailer.php';
+require 'C:/xampp/htdocs/PHPMailer-6.8.0/src/SMTP.php';
+require 'C:/xampp/htdocs/PHPMailer-6.8.0/src/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
