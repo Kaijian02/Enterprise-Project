@@ -1,7 +1,7 @@
 <?php
 include_once 'adminSidebar.php';
 
-$query = "SELECT specModel, soldnum, year FROM carsold ORDER BY soldnum";
+$query = "SELECT specModel, soldnum, color, year FROM carsold ORDER BY soldnum";
     
         // prepare query statement
         $stmt = mysqli_query($conn, $query);
@@ -15,7 +15,7 @@ $query = "SELECT specModel, soldnum, year FROM carsold ORDER BY soldnum";
             while ($row=mysqli_fetch_assoc($stmt)){
                 extract($row);
                 $product_item=array(
-                    "label" => $specModel,
+                    "label" => $specModel . ' ' . $color,
                     "y" => $soldnum,
                 );
                 array_push($products_arr, $product_item);

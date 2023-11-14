@@ -4,7 +4,7 @@ include_once 'adminSidebar.php';
 //get current month
 $month = date('m');
 
-$query = "SELECT specModel, soldnum, year FROM carsold WHERE month = $month ORDER BY soldnum";
+$query = "SELECT specModel, soldnum, color, year FROM carsold WHERE month = $month ORDER BY soldnum";
     
         // prepare query statement
         $stmt = mysqli_query($conn, $query);
@@ -18,7 +18,7 @@ $query = "SELECT specModel, soldnum, year FROM carsold WHERE month = $month ORDE
             while ($row=mysqli_fetch_assoc($stmt)){
                 extract($row);
                 $product_item=array(
-                    "label" => $specModel,
+                    "label" => $specModel . ' ' . $color,
                     "y" => $soldnum,
                 );
                 array_push($products_arr, $product_item);

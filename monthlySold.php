@@ -6,7 +6,7 @@ $month = date('m');
 
 $total = 0;
 
-$query = "SELECT specModel, soldnum, price, year FROM carsold WHERE month = $month ORDER BY soldnum";
+$query = "SELECT specModel, soldnum, price, color, year FROM carsold WHERE month = $month ORDER BY soldnum";
     
         // prepare query statement
         $stmt = mysqli_query($conn, $query);
@@ -20,7 +20,7 @@ $query = "SELECT specModel, soldnum, price, year FROM carsold WHERE month = $mon
             while ($row=mysqli_fetch_assoc($stmt)){
                 extract($row);
                 $product_item=array(
-                    "label" => $specModel,
+                    "label" => $specModel . ' ' . $color,
                     "y" => $soldnum,
                 );
                 array_push($products_arr, $product_item);

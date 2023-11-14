@@ -18,7 +18,7 @@ function getProductsByMonth($month){
       extract($row);
 //      print_r($row);
       $product_item=array(
-         'label' => $specModel,
+         'label' => $specModel . ' ' . $color,
          'y' => (int)$soldnum,
      );
      array_push($products_arr, $product_item);
