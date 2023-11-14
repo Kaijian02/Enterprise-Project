@@ -181,7 +181,7 @@ if ($count > 0) {
             <h2 class>' . $model . '</h2>
             <p class="model">' . $variant . '</p>
             
-            <img src="img/ ' . $modelpic . '" class="car-model" alt="Honda Accord"
+            <img src="img/'.$model. '/' . $modelpic . '" class="car-model" alt="model pic"
                 style="margin: 0 auto; display:block; margin-top:30px;" width="522px" height="219px" />
                 ';
             ?>

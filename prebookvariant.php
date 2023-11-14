@@ -191,6 +191,11 @@ else{
         border: 1px solid red;
         background: #b1351f;
     }
+
+    .car-model{
+        height: 219px;
+        width: auto;
+    }
 </style>
 
 <body>
@@ -201,7 +206,7 @@ else{
             echo '
             <h2 class>book your honda</h2>
             <p class="model">' . $model . '</p>
-            <img src="img/ ' . $modelpic . '" class="car-model" alt="Honda Accord"
+            <img src="img/'.$model. '/' . $modelpic . '" class="car-model" alt="model pic"
                 style="margin: 0 auto; display:block; margin-top:30px;" width="522px" height="219px" />
                 ';
             ?>
