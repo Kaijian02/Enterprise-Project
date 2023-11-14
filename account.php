@@ -65,6 +65,10 @@ body {
   padding: 0;
 }
 
+a {
+     text-decoration: none !important; 
+}
+
 /* Style user details section */
 .user_details {
   margin-top: 20px;
