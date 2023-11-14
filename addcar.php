@@ -1,4 +1,3 @@
-
 <?php
 include_once 'adminSidebar.php';
 
@@ -22,7 +21,7 @@ if (isset($_POST['add'])) {
   $design_desc2 = $_POST['designdesc2'];
   $design_desc3 = $_POST['designdesc3'];
   $design_desc4 = $_POST['designdesc4'];
-  
+
   // Define an array of file input names and their respective temporary file names
   $file_inputs = [
     'image1' => $_FILES['image1']['tmp_name'],
@@ -34,7 +33,7 @@ if (isset($_POST['add'])) {
     'image7' => $_FILES['image7']['tmp_name'],
     'image8' => $_FILES['image8']['tmp_name'],
     'image9' => $_FILES['image9']['tmp_name']
-];
+  ];
 
   if (
     empty($model) || empty($home_image) || empty($model_information) || empty($model_pic) || empty($spec_pic1) || empty($spec_pic2) || empty($spec_pic3) || empty($design_pic1) || empty($design_pic2) ||
@@ -54,12 +53,18 @@ if (isset($_POST['add'])) {
       foreach ($file_inputs as $input_name => $tmp_name) {
         // Define the target folder for each image
         $image_folder = 'img/';
+        $model_folder = $model;
+
+        // Create the folder
+        if (!is_dir($image_folder . $model_folder)) {
+          mkdir($image_folder . $model_folder, 0755, true);
+        }
 
         // Construct the target file path
-        $target_file = $image_folder . $_FILES[$input_name]['name'];
+        $target_file = $image_folder . $model_folder . '/' .$_FILES[$input_name]['name'];
 
         if (move_uploaded_file($tmp_name, $target_file)) {
-          echo "<script>alert('Image for $input_name uploaded successfully.')</script>";
+           
         } else {
           echo "<script>alert('Failed to upload image for $input_name.')</script>";
         }
@@ -287,7 +292,7 @@ if (isset($_POST['add'])) {
       <hr style="width: 90%;" /></br></br>
 
       <!--car specification-->
-      <div class="row align-items-center" style="width: 70%;">
+      <div class="row align-items-center" style="width: 80%;">
         <div class="col" style="display:block;">
           <img id="image-preview2" src="img/transparent.jpg" class="car-spec" alt="Selected Image">
           <input type="file" accept="image/png, image/jpeg, image/jpg" name="image2" id="image2" class="box"
