@@ -11,8 +11,8 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
         <link rel="icon" href="img/honda-icon.png" type="image/png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel ="stylesheet" href="css/adminPrebookTestdrive.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel ="stylesheet" href="css/adminPrebookTestdrive.css">
         <script src="js/main.js"></script>
     </head>
     <body>
@@ -26,7 +26,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             </button>
             <div class="collapse show" id="home-collapse" style="">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="adminIndex.php" class="link-dark rounded">Dashboard</a></li>
+                <li><a href="adminIndex.php" class="link-dark rounded">Prebook</a></li>
                 <li><a href="stockList.php" class="link-dark rounded">Stock List</a></li>
                 <li><a href="promotion.php" class="link-dark rounded">Promotion Code</a></li>
             </ul>
@@ -50,7 +50,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'honda');
             </button>
             <div class="collapse show" id="orders-collapse" style="">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="prebooklist.php" class="link-dark rounded">Bookings</a></li>
+                <li><a href="testdrivelist.php" class="link-dark rounded">Test Drive Bookings</a></li>
                 <li><a href="soldHistory.php" class="link-dark rounded">History</a></li>
             </ul>
             </div>
